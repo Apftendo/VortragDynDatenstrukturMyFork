@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class Liste {
+public class Stack {
     private Node first;
 
     /**
@@ -12,23 +12,33 @@ public class Liste {
     }
 
     /**
-     * Adds String to the list
+     * Das Objekt pObject wird oben auf den Stapel gelegt. Falls
+     * pObject gleich null ist, bleibt der Stapel unverändert.
      * @param pInhalt
      */
-    public void
-    insert(String pInhalt){
-        Node tmp = first;
-        if (first == null){
-            first = new Node(pInhalt);
-        } else {
-            while (tmp.getNext() != null){
-                tmp = tmp.getNext();
-            }
-            tmp.setNext(new Node(pInhalt));
-        }
+    public void push(String pInhalt){
+        //ToDO implement
     }
 
+    /**
+     * Das zuletzt eingefügte Objekt wird von dem Stapel entfernt.
+     * Falls der Stapel leer ist, bleibt er unverändert
+     * @return
+     */
+    public String pop(){
+        //ToDO implement
+        return null;
+    }
 
+    /**
+     * Die Anfrage liefert das oberste Stapelobjekt. Der Stapel bleibt
+     * unverändert. Falls der Stapel leer ist, wird null zurückgegeben.
+     * @return
+     */
+    public String top(){
+        //ToDO Implement
+        return null;
+    }
 
     /**
      * Returns String representation of List
@@ -51,6 +61,5 @@ public class Liste {
         ret = ret + "]";
         return ret;
     }
-
 
 }
