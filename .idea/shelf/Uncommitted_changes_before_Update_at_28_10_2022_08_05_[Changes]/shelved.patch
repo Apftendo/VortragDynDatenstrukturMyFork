@@ -1,0 +1,201 @@
+Index: src/main/java/org/example/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport org.example.model.Liste;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n        Liste l1 = new Liste();\r\n\r\n        l1.insert(\"Hallo Welt\");\r\n        l1.insert(\"Peter Pan\");\r\n        l1.insert(\"Manuel\");\r\n\r\n        System.out.println(l1);\r\n\r\n        System.out.println(l1.dequeue());\r\n\r\n        System.out.println(l1);\r\n\r\n        Liste l2 = new Liste();\r\n        System.out.println(l2.dequeue());\r\n\r\n        System.out.println(l2);\r\n\r\n\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Main.java b/src/main/java/org/example/Main.java
+--- a/src/main/java/org/example/Main.java	(revision 7c25ac677b3f040360733131607a763bccf8a586)
++++ b/src/main/java/org/example/Main.java	(date 1666877492394)
+@@ -1,6 +1,7 @@
+ package org.example;
+ 
+ import org.example.model.Liste;
++import org.example.model.Node;
+ 
+ public class Main {
+     public static void main(String[] args) {
+@@ -21,6 +22,12 @@
+         System.out.println(l2.dequeue());
+ 
+         System.out.println(l2);
++        Node node = new Node("b");
++        l1.push(node);
++        System.out.println(l1);
++        l1.pop();
++        System.out.println(l1);
++        System.out.println(l1.top());
+ 
+ 
+ 
+Index: src/main/java/org/example/model/Node.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.model;\r\n\r\npublic class Node {\r\n    private String inhalt;\r\n    private Node next;\r\n\r\n    public Node (String pInhalt){\r\n        this.inhalt = pInhalt;\r\n    }\r\n\r\n    public Node getNext(){\r\n        return next;\r\n    }\r\n\r\n    public void setNext(Node pNode){\r\n        this.next = pNode;\r\n    }\r\n\r\n    public String getInhalt(){\r\n        return inhalt;\r\n    }\r\n\r\n    public String toString(){\r\n        return \"[\"+inhalt+\"]\";\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/model/Node.java b/src/main/java/org/example/model/Node.java
+--- a/src/main/java/org/example/model/Node.java	(revision 7c25ac677b3f040360733131607a763bccf8a586)
++++ b/src/main/java/org/example/model/Node.java	(date 1666877314170)
+@@ -5,22 +5,28 @@
+     private Node next;
+ 
+     public Node (String pInhalt){
++
+         this.inhalt = pInhalt;
++
+     }
+ 
+     public Node getNext(){
++
+         return next;
+     }
+ 
+     public void setNext(Node pNode){
++
+         this.next = pNode;
+     }
+ 
+     public String getInhalt(){
++
+         return inhalt;
+     }
+ 
+     public String toString(){
++
+         return "["+inhalt+"]";
+     }
+ }
+Index: src/main/java/org/example/model/Liste.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.model;\r\n\r\npublic class Liste {\r\n    private Node first;\r\n\r\n    public boolean isEmpty(){\r\n        return first == null;\r\n    }\r\n\r\n    public void insert(String pInhalt){\r\n        Node tmp = first;\r\n        if (first == null){\r\n            first = new Node(pInhalt);\r\n        } else {\r\n            while (tmp.getNext() != null){\r\n                tmp = tmp.getNext();\r\n            }\r\n            tmp.setNext(new Node(pInhalt));\r\n        }\r\n    }\r\n\r\n    public Node dequeue(){\r\n        Node tmp = first;\r\n        if(!isEmpty()){\r\n            first = first.getNext();\r\n        }\r\n        return tmp;\r\n    }\r\n\r\n    public String toString(){\r\n        String ret = \"[\";\r\n        Node tmp = first;\r\n\r\n        while (tmp != null){\r\n            if(tmp.getNext() == null){\r\n                ret = ret + tmp.getInhalt();\r\n            }else {\r\n                ret = ret + tmp.getInhalt() + \";\";\r\n            }\r\n            tmp = tmp.getNext();\r\n        }\r\n\r\n\r\n        ret = ret + \"]\";\r\n        return ret;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/model/Liste.java b/src/main/java/org/example/model/Liste.java
+--- a/src/main/java/org/example/model/Liste.java	(revision 7c25ac677b3f040360733131607a763bccf8a586)
++++ b/src/main/java/org/example/model/Liste.java	(date 1666879025334)
+@@ -4,8 +4,24 @@
+     private Node first;
+ 
+     public boolean isEmpty(){
++
+         return first == null;
+     }
++    public void push(Node pNode) {
++        Node n = first;
++        while (n.getNext()!= null) {
++            n = n.getNext();
++        }
++        n.setNext(pNode);
++    }
++    public void pop() {
++        Node n = first;
++        while (n.getNext()!= null) {
++
++            n = n.getNext();
++        }
++        n.setNext(null);
++    }
+ 
+     public void insert(String pInhalt){
+         Node tmp = first;
+@@ -44,6 +60,13 @@
+         ret = ret + "]";
+         return ret;
+     }
++    public Node top() {
++        Node n = first;
++        while(n.getNext()!=null) {
++            n = n.getNext();
++        }
++        return n;
++    }
+ 
+ 
+ }
+Index: src/main/java/org/example/model/Queue.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/model/Queue.java b/src/main/java/org/example/model/Queue.java
+new file mode 100644
+--- /dev/null	(date 1666879130155)
++++ b/src/main/java/org/example/model/Queue.java	(date 1666879130155)
+@@ -0,0 +1,10 @@
++package org.example.model;
++
++public class Queue {
++    private Node first;
++    public boolean isEmpty(){
++
++        return first == null;
++    }
++    
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"c6134172-7232-4b8d-ac72-ed7d7ce1c98b\" name=\"Changes\" comment=\"init\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2GfEaeSHz9kiVlm7NWGEmAYUoow\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Starter\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.Main\" />\r\n      <module name=\"VortragDynDatenstruktur\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"c6134172-7232-4b8d-ac72-ed7d7ce1c98b\" name=\"Changes\" comment=\"\" />\r\n      <created>1666771302941</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1666771302941</updated>\r\n      <workItem from=\"1666771304534\" duration=\"1964000\" />\r\n      <workItem from=\"1666773770344\" duration=\"377000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"init\">\r\n      <created>1666771430660</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666771430661</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"init\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"init\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7c25ac677b3f040360733131607a763bccf8a586)
++++ b/.idea/workspace.xml	(date 1666879937462)
+@@ -4,7 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="c6134172-7232-4b8d-ac72-ed7d7ce1c98b" name="Changes" comment="init" />
++    <list default="true" id="c6134172-7232-4b8d-ac72-ed7d7ce1c98b" name="Changes" comment="ka">
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Queue.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Liste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Liste.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Node.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -56,7 +62,9 @@
+       <option name="presentableId" value="Default" />
+       <updated>1666771302941</updated>
+       <workItem from="1666771304534" duration="1964000" />
+-      <workItem from="1666773770344" duration="377000" />
++      <workItem from="1666773770344" duration="1770000" />
++      <workItem from="1666854685423" duration="725000" />
++      <workItem from="1666876091447" duration="2358000" />
+     </task>
+     <task id="LOCAL-00001" summary="init">
+       <created>1666771430660</created>
+@@ -65,7 +73,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1666771430661</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="ka">
++      <created>1666774356089</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1666774356089</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -84,6 +99,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="init" />
+-    <option name="LAST_COMMIT_MESSAGE" value="init" />
++    <MESSAGE value="ka" />
++    <option name="LAST_COMMIT_MESSAGE" value="ka" />
+   </component>
+ </project>
+\ No newline at end of file

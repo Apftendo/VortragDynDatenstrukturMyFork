@@ -8,15 +8,17 @@ public class Liste {
      * @return true or false
      */
     public boolean isEmpty(){
+
         return first == null;
     }
+
+
 
     /**
      * Adds String to the list
      * @param pInhalt
      */
-    public void
-    insert(String pInhalt){
+    public void insert(String pInhalt){
         Node tmp = first;
         if (first == null){
             first = new Node(pInhalt);
@@ -50,6 +52,13 @@ public class Liste {
 
         ret = ret + "]";
         return ret;
+    }
+    public Node top() {
+        Node n = first;
+        while(n.getNext()!=null) {
+            n = n.getNext();
+        }
+        return n;
     }
 
 

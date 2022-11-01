@@ -8,6 +8,7 @@ public class Stack {
      * @return true or false
      */
     public boolean isEmpty(){
+
         return first == null;
     }
 
@@ -18,7 +19,21 @@ public class Stack {
      */
     public void push(String pInhalt){
         //ToDO implement
+        Node n = first;
+        //Fall 1 leerer Stack
+        if (first == null) {
+            first = new Node(pInhalt);
+        }else {
+            // Fall 2 Stack nicht leer
+            Node a = first;
+            first = new Node(pInhalt);
+            first.setNext(a);
+
+        }
+
     }
+
+
 
     /**
      * Das zuletzt eingefügte Objekt wird von dem Stapel entfernt.
@@ -26,7 +41,12 @@ public class Stack {
      * @return
      */
     public String pop(){
-        //ToDO implement
+
+        Node n = first;
+        while (n.getNext()!= null) {
+                n = n.getNext();
+            }
+        n.setNext(null);
         return null;
     }
 
