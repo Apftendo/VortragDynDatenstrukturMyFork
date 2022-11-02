@@ -57,7 +57,7 @@ public class Stack {
      */
     public String top(){
         //ToDO Implement
-        return null;
+        return first.getInhalt();
     }
 
     /**

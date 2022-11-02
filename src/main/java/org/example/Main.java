@@ -34,6 +34,7 @@ public class Main {
         s1.push("b");
         s1.push("c");
         System.out.println(s1);
+        System.out.println("["+s1.top()+"]");
     }
     public void frager() {
         Main m2 = new Main();
