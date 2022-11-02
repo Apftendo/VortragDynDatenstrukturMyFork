@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6134172-7232-4b8d-ac72-ed7d7ce1c98b" name="Changes" comment="stack fertig">
+    <list default="true" id="c6134172-7232-4b8d-ac72-ed7d7ce1c98b" name="Changes" comment="stack wirklich fertig">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Stack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RunAnythingCache">
@@ -68,7 +67,7 @@
       <updated>1666771302941</updated>
       <workItem from="1666771304534" duration="3915000" />
       <workItem from="1667326146733" duration="2272000" />
-      <workItem from="1667379016620" duration="1838000" />
+      <workItem from="1667379016620" duration="2785000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1666771430660</created>
@@ -140,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667379940470</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="stack wirklich fertig">
+      <created>1667380943624</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667380943625</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +170,8 @@
     <MESSAGE value="[Add] Empty classes" />
     <MESSAGE value="ka" />
     <MESSAGE value="stack fertig" />
-    <option name="LAST_COMMIT_MESSAGE" value="stack fertig" />
+    <MESSAGE value="stack wirklich fertig" />
+    <option name="LAST_COMMIT_MESSAGE" value="stack wirklich fertig" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
