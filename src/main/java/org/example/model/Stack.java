@@ -39,10 +39,11 @@ public class Stack {
      * Das zuletzt eingefügte Objekt wird von dem Stapel entfernt.
      * Falls der Stapel leer ist, bleibt er unverändert
      */
-    public void pop(){
-        Node n = first;
-        first = null;
-        first = n.getNext();
+    public void pop() {
+        if (!isEmpty()) {
+            Node n = first;
+            first = n.getNext();
+        }
     }
 
     /**
@@ -51,8 +52,10 @@ public class Stack {
      * @return
      */
     public String top(){
-        //ToDO Implement
-        return first.getInhalt();
+        if(!isEmpty())
+            return first.getInhalt();
+
+        return null;
     }
 
     /**

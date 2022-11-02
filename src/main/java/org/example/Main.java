@@ -31,6 +31,7 @@ public class Main {
     }
     private void stackTester() {
         Stack s1 = new Stack();
+        s1.top();
         s1.push("a");
         s1.push("b");
         s1.push("c");
@@ -41,6 +42,8 @@ public class Main {
     }
     private void queueTester() {
         Queue q1 = new Queue();
+        q1.dequeue();
+        q1.front();
         q1.enqueue("a");
         q1.enqueue("b");
         q1.enqueue("c");
