@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6134172-7232-4b8d-ac72-ed7d7ce1c98b" name="Changes" comment="stack wirklich fertig">
+    <list default="true" id="c6134172-7232-4b8d-ac72-ed7d7ce1c98b" name="Changes" comment="queue fertig">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Queue.java" afterDir="false" />
@@ -67,7 +67,7 @@
       <updated>1666771302941</updated>
       <workItem from="1666771304534" duration="3915000" />
       <workItem from="1667326146733" duration="2272000" />
-      <workItem from="1667379016620" duration="2785000" />
+      <workItem from="1667379016620" duration="3650000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1666771430660</created>
@@ -146,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667380943625</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="queue fertig">
+      <created>1667382236082</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667382236082</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +178,8 @@
     <MESSAGE value="ka" />
     <MESSAGE value="stack fertig" />
     <MESSAGE value="stack wirklich fertig" />
-    <option name="LAST_COMMIT_MESSAGE" value="stack wirklich fertig" />
+    <MESSAGE value="queue fertig" />
+    <option name="LAST_COMMIT_MESSAGE" value="queue fertig" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

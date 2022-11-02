@@ -19,9 +19,10 @@ public class Queue {
 
     }
     public void dequeue() {
-        Node n = first;
-        first = null;
-        first = n.getNext();
+        if(!isEmpty()) {
+            Node n = first;
+            first = n.getNext();
+        }
     }
     public Node front() {
         return first;
