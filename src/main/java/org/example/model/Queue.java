@@ -6,5 +6,7 @@ public class Queue {
 
         return first == null;
     }
-    
+    public void enqueue(String pInhalt) {
+
+    }
 }

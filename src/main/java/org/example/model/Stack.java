@@ -38,16 +38,11 @@ public class Stack {
     /**
      * Das zuletzt eingefügte Objekt wird von dem Stapel entfernt.
      * Falls der Stapel leer ist, bleibt er unverändert
-     * @return
      */
-    public String pop(){
-
+    public void pop(){
         Node n = first;
-        while (n.getNext()!= null) {
-                n = n.getNext();
-            }
-        n.setNext(null);
-        return null;
+        first = null;
+        first = n.getNext();
     }
 
     /**

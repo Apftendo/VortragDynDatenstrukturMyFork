@@ -35,6 +35,8 @@ public class Main {
         s1.push("c");
         System.out.println(s1);
         System.out.println("["+s1.top()+"]");
+        s1.pop();
+        System.out.println(s1);
     }
     public void frager() {
         Main m2 = new Main();
@@ -47,6 +49,7 @@ public class Main {
             default -> {
                 System.out.println("Bitte eine Zahl wählen");
                 frager();
+
             }
         }
     }
